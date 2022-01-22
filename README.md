@@ -5,6 +5,7 @@ Note:
 These scripts were initially made specifically to be incorperated into the typical workflow in Golding Lab (dated 01/21/2022). Much of the documentation assumes that the reader has prior knowledge of the typical algorithms used in Golding Lab, such as schnitzcell and spatzcell, and their respective and accompanying codes.
 
 Contents of this repository:
+
 	ClusterRecognition
 		- This script allows for the identification of closed fluorescent objects and outputs the results in a data format similar to spatzcell.
 	
