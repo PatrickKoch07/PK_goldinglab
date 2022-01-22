@@ -2,7 +2,7 @@
 A collection of MATLAB scripts, with a small side of documentation, made by Patrick Koch for use in bacterial fluorescent image analysis. 
 
 Note:
-These scripts were initially made specifically to be incorperated into the typical workflow in Golding Lab (dated 01/21/2022). Much of the documentation assumes that the reader has prior knowledge of the typical algorithms used in Golding Lab, such as schnitzcell and spatzcell, and their respective and accompanying codes.
+These scripts were initially made specifically to be incorperated into the typical workflow in Golding Lab (dated 01/21/2022). Much of the documentation assumes that the reader has prior knowledge of the typical algorithms used in Golding Lab, such as schnitzcell and spatzcell, and their respective and accompanying codes. Use of these codes may also require these previously mentioned codes.
 
 Contents of this repository:
 
