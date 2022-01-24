@@ -1,0 +1,73 @@
+
+                             Schnitzcells
+
+  Software for Quantitative Analysis of Single-Cell Time-Lapse Microscopy
+
+                             Release 1.1
+                          November 22, 2005
+
+I. Introduction
+
+This software permits users to perform a quantitative analysis of
+time-lapse (movies) of fluorescently-tagged proteins in living cells
+constrained to grow in the focal plane of a microscope.  The analysis 
+of the movies proceeds in four stages:
+
+  1. Preparing for the analysis (specifying directories & analysis parameters)
+  2. Segmenting individual movie frames to define cell boundaries
+     2.a. Manually checking/correcting the cell segmentation
+  3. Cell Tracking to associate individual cells' data across multiple frames
+     and to construct a cell lineage tree (recognizing cell division events)
+     3.b. Manually checking/correcting the cell tracking
+  4. Collecting fluorescence intensity data over each cell's lifetime
+
+
+II. Installation
+
+The software is implemented as a collection of MATLAB scripts, and
+designed to work within MATLAB version 7 SP2 on the Windows operating
+system.  (Mac OS X and Linux should work as well, but are not
+supported).
+
+The MATLAB scripts are contained in muliple directories.  When using
+the software for the first time the paths of these directories must be
+added to one's MATLAB environment.  This can be done using the MATLAB 
+GUI File->Set Path menu option, or using the MATLAB addpath command.
+You should add the whole directory structure to the path.
+
+
+III. Quick Start Usage
+
+The software was designed to be very easy to use for the most common
+experimental scenarios, but flexible enough to handle somewhat more
+diverse experimental conditions.
+
+Here is a quick summary of the series of commands necessary to perform 
+analysis of an example movie.
+
+  p = initschnitz('VNmovie-01','2005-04-03','e.coli','rootDir','D:\movies');
+  p = segmoviephase(p);
+  p = manualcheckseg(p);
+  p = trackcomplete(p);
+  p = schnitzedit(p);
+  drawschnitzbaum(schnitzcells,4);
+  [p,schnitzcells] = compileschnitz(p);
+  plotschnitzme(schnitzcells,'mins','lengthMicrons',[],'k-');
+
+In the above example, the movie name is 'VNmovie-01', which was collected 
+on 2005-04-03, and the movie type is 'e.coli'.  The root "data"
+directory 'D:\movies' will contain the results of movie analysis.
+
+These are the MATLAB routines that most users are expected to execute,
+and generally such user-level routines are located under the
+schnitzcells package's analysis_routine subdirectory.  Each of these
+user-level commands are described in greater detail in the Schnitzcell 
+User's Manual.
+
+
+IV. More Information
+
+A detailed User's Manual is provided with this software distribution.
+You should refer to this document to see additional usage examples and
+to take advantage of features that permit greater control over your
+time-lapse move analysis.
