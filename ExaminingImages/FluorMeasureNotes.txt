@@ -1,0 +1,17 @@
+Reminder of what this function does:
+Most code handed down and used in the lab seems to use a function known as FluorMeasure1.m. This code takes in a fluorescent image and cell masks to output the cells' sizes, average cellular fluorescence, length, and background fluorescence.
+
+Its issue:
+The first problem with FluorMeasure is that it does not take into account cells having different z-slice foci. The reason for different foci might differ from spots in a cell being drawn to one side by chance, to an existence of a slight tilt in the sample making the optical distance different on the left and right.
+
+Although this is more of a reminder to the reader, often a second problem with FluorMeasure comes from code which uses it. Code which may have been used before may not work for the new set of images because of different methods needed for selecting a best z-slice.
+
+A possible solution:
+Using the information in the previous page, one can easily change FluorMeasure1 to look at the best z slice of a channel, determined after analysis if this should be in phase 3 or the fluorescent channel or a displaced phase 3. Additionally, by adding a loop over each cell in the frame, one can make the function do its calculations on the best z for each cell.
+
+An example of what such a correction might look like is here:
+
+Where one would change the highlighted variable, sr.image.channel, to be the focus channel #:
+	FluorMeasure_indivZ.m
+	ExaiminingImages_ExampleCorrection.png
+
